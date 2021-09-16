@@ -1,4 +1,4 @@
-const actions = [
+const postfixes = [
     "笑",
     "燦笑",
     "推眼鏡",
@@ -12,6 +12,9 @@ const actions = [
     "遠望"
 ]
 
-const dirty_actions = [
-    
+const prefixes = [
+    "嘛",
+    "欸都",
+    "唔姆..",
+    "呀咧呀咧"
 ]

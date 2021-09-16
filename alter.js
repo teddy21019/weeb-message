@@ -4,17 +4,25 @@ function transform(){
     
     new_text = "";
     text_array.forEach(line => {
-        let have_www = ( Math.random() > 0.8 ) ? 1 : 0;
+        let have_www = randomBool(0.2);
         let www_number = ( Math.floor ( Math.random() * 4 ) + 2 ) * have_www; // 最多7個，最少 2個
         let www = "w".repeat(www_number); 
 
-        let have_action = ( Math.random() > 0.4 ) ? 1 : 0;
-        let action_index = Math.floor( Math.random() * actions.length );
-        let action  = have_action? ( '(' + actions[action_index]) : '' ;
+        let have_postfix = randomBool(0.6);
+        let postfix_index = Math.floor( Math.random() * postfixes.length );
+        let postfix  = have_postfix ? ( '(' + postfixes[postfix_index]) : '' ;
 
-        new_text += `${line}  ${www} ${action} <br />`;
+        let have_prefix = randomBool(0.2);
+        let prefix_index = Math.floor( Math.random() * prefixes.length );
+        let prefix = have_prefix? prefixes[prefix_index] : '' ;
+
+        new_text += `${prefix} ${line} ${www} ${postfix} <br />`;
 
     });
+
+    function randomBool(p){
+        return ( Math.random() < p ) ? 1 : 0;
+    }
 
     document.getElementById("result").innerHTML = new_text;
 }
