@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    padding-left: 10%;
+    padding-top: 5%;
+}
+
+#orig {
+    outline: none;
+    border: none;
+    padding: 3%;
+    width: 70%;
+    height: 30%;
+    border-radius: 25px;
+    background: #e6e6e6;
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666
+}
+
+#transform{
+    margin: 3px;
+    outline: none;
+    border: none;
+    display: block;
+    width: 20%;
+    border-radius: 10px;
+    background:rgb(195, 216, 245);
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: black;
+}
+
+#transform:hover{
+    background: rgb(150, 188, 241);
+}
+
+p{
+    line-height: 3em ;
+}
