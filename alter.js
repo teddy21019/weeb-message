@@ -29,7 +29,7 @@ function transform(){
 
 function darklize_transform(){
     let text = document.getElementById("orig").value;
-    let text_array = text_split('\n');
+    let text_array = text.split('\n');
     let new_text = "";
     text_array.forEach(line => {
         let postfix_index = Math.floor(Math.random() * darklize_postfix.length);
