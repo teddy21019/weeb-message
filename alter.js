@@ -1,8 +1,8 @@
 function transform(){
-    let text = document.getElementById("orig").value;
-    text_array = text.split('\n');
+    document.getElementById("result").textContent = "";
+    const text = document.getElementById("orig").value;
+    const text_array = text.split('\n');
     
-    new_text = "";
     text_array.forEach(line => {
         let have_www = randomBool(0.2);
         let www_number = ( Math.floor ( Math.random() * 4 ) + 2 ) * have_www; // 最多7個，最少 2個
@@ -10,13 +10,13 @@ function transform(){
 
         let have_postfix = randomBool(0.6);
         let postfix_index = Math.floor( Math.random() * postfixes.length );
-        let postfix  = have_postfix ? ( '(' + postfixes[postfix_index]) : '' ;
+        let postfix = have_postfix ? ( '(' + postfixes[postfix_index]) : '' ;
 
         let have_prefix = randomBool(0.2);
         let prefix_index = Math.floor( Math.random() * prefixes.length );
         let prefix = have_prefix? prefixes[prefix_index] : '' ;
 
-        new_text += `${prefix} ${line} ${www} ${postfix} <br />`;
+        renderResult(`${prefix} ${line} ${www} ${postfix}`);
 
     });
 
@@ -24,5 +24,11 @@ function transform(){
         return ( Math.random() < p ) ? 1 : 0;
     }
 
-    document.getElementById("result").innerHTML = new_text;
+    function renderResult(new_text) {
+        const span = document.createElement('span')
+        const line_break = document.createElement('br')
+        span.textContent = new_text
+        document.getElementById("result").appendChild(span)
+        document.getElementById("result").appendChild(line_break)
+    }
 }
