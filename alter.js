@@ -26,3 +26,16 @@ function transform(){
 
     document.getElementById("result").innerHTML = new_text;
 }
+
+function darklize_transform(){
+    let text = document.getElementById("orig").value;
+    let text_array = text_split('\n');
+    let new_text = "";
+    text_array.forEach(line => {
+        let postfix_index = Math.floor(Math.random() * darklize_postfix.length);
+        let postfix = '(' + darklize_postfix[postfix_index];
+        new_text += `${line} ${postfix} <br />`;
+    });
+
+    document.getElementById("result").innerHTML = new_text;
+}
