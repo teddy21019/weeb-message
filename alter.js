@@ -1,8 +1,8 @@
 function transform(){
     let text = document.getElementById("orig").value;
-    text_array = text.split('\n');
+    let text_array = text.split('\n');
     
-    new_text = "";
+    let new_text = "";
     text_array.forEach(line => {
         let have_www = randomBool(0.2);
         let www_number = ( Math.floor ( Math.random() * 4 ) + 2 ) * have_www; // 最多7個，最少 2個
@@ -20,9 +20,9 @@ function transform(){
 
     });
 
-    function randomBool(p){
-        return ( Math.random() < p ) ? 1 : 0;
-    }
-
     document.getElementById("result").innerHTML = new_text;
+}
+
+function randomBool(p){
+    return ( Math.random() < p ) ? 1 : 0;
 }
