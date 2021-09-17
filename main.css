@@ -1,14 +1,15 @@
-*{
-    box-sizing: border-box;
+html, body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-html, body{
-    width: 100%;
-    height: 100%;
-}
-body{
-    padding-left: 10%;
-    padding-top: 5%;
+#container {
+  width: 80%;
+  max-width: 90%;
+  margin: 20px auto;
 }
 
 .switch {
@@ -64,6 +65,8 @@ body{
   }
   
   /* Rounded sliders */
+
+  
   .slider.round {
     border-radius: 34px;
   }
@@ -82,29 +85,34 @@ body{
     outline: none;
     border: none;
     display: block;
-    padding: 3%;
-    width: 70%;
-    height: 30%;
+    padding: 20px 15px;
     border-radius: 25px;
     background: #e6e6e6;
     font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;
-    color: #666
+    color: #666;
+
+    width: 100%;
+    height: 300px;
+    max-width: 90%;
+    margin: 10px auto;
 }
 
 #transform{
-    margin: 3px;
     outline: none;
     border: none;
     display: block;
-    width: 20%;
     border-radius: 10px;
     background:rgb(195, 216, 245);
     font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;
     color: black;
+
+    width: 100px;
+    padding: 3px 8px;
+    margin: 20px 0;
 }
 
 #transform:hover{
@@ -112,6 +120,32 @@ body{
 }
 
 p{
-    line-height: 3em ;
+    line-height: 3em;
+    margin: 0;
 }
 
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 100px;
+	border: 1.5px solid transparent;
+	background-clip: content-box;
+	background-color: lightgray;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
