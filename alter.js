@@ -1,6 +1,6 @@
 function transform(){
     let text = document.getElementById("orig").value;
-    let text_array = text.split('\n');
+    let text_array = text.trim().split('\n');
     
     let new_text = "";
     text_array.forEach(line => {
@@ -16,7 +16,11 @@ function transform(){
         let prefix_index = Math.floor( Math.random() * prefixes.length );
         let prefix = have_prefix? prefixes[prefix_index] : '' ;
 
-        new_text += `${prefix} ${line} ${www} ${postfix} <br />`;
+        if (line !== "") {
+            new_text += `${prefix} ${line} ${www} ${postfix} <br />`;
+        } else {
+            new_text += "<br />"
+        }
 
     });
 
